@@ -8,12 +8,15 @@ class Localizationcommand < Formula
   url "https://github.com/BackNotGod/localizationCommand/archive/0.0.1.tar.gz"
   sha256 "ae296781e372a85ea637c5cfc1cd5ef4602f397ca24a572ab6d41a2205bfae8c"
 
-  # depends_on "cmake" => :build
+  depends_on :xcode => ["8.0", :build]
 
   def install
-     ENV.deparallelize  # if your formula fails when building in parallel
-     system "./configure", "--prefix=#{prefix}"
-     system "make", "install"
+      xcodebuild "-project",
+      "localizationCommand.xcodeproj",
+      "-scheme", "SwiftFormat (Command Line Tool)",
+      "CODE_SIGN_IDENTITY=",
+      "SYMROOT=build", "OBJROOT=build"
+      bin.install "build/Release/localizationCommand"
   end
 
 end
