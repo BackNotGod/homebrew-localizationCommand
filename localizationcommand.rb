@@ -9,6 +9,7 @@ class Localizationcommand < Formula
   sha256 "f0dcb180c26ac7eae97512f4c794190fe26f940214fe2b748be980e12645ddd9"
 
   depends_on :xcode => ["8.0", :build]
+  depends_on :swift => ["3.0"]
 
   def install
       ENV.deparallelize
