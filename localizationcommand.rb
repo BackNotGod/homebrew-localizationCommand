@@ -11,6 +11,7 @@ class Localizationcommand < Formula
   depends_on :xcode => ["8.0", :build]
 
   def install
+      ENV.deparallelize
       xcodebuild "-project",
       "localizationCommand.xcodeproj",
       "-scheme", "localizationCommand",
