@@ -14,6 +14,7 @@ class Localizationcommand < Formula
       xcodebuild "-project",
       "localizationCommand.xcodeproj",
       "-scheme", "localizationCommand",
+      "-configuration","release",
       "CODE_SIGN_IDENTITY=",
       "SYMROOT=build", "OBJROOT=build"
       bin.install "build/Release/localizationCommand"
