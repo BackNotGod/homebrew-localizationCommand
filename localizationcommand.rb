@@ -13,7 +13,7 @@ class Localizationcommand < Formula
   def install
       xcodebuild "-project",
       "localizationCommand.xcodeproj",
-      "-scheme", "SwiftFormat (Command Line Tool)",
+      "-scheme", "localizationCommand (Command Line Tool)",
       "CODE_SIGN_IDENTITY=",
       "SYMROOT=build", "OBJROOT=build"
       bin.install "build/Release/localizationCommand"
