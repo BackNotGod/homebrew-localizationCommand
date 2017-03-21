@@ -8,18 +8,10 @@ class Localizationcommand < Formula
   url "https://github.com/BackNotGod/localizationCommand/archive/0.0.2.tar.gz"
   sha256 "f0dcb180c26ac7eae97512f4c794190fe26f940214fe2b748be980e12645ddd9"
 
-  depends_on :xcode => ["8.0", :build]
-
 
   def install
-      ENV.deparallelize
-      xcodebuild "-project",
-      "localizationCommand.xcodeproj",
-      "-scheme", "localizationCommand",
-      "-configuration","release",
-      "CODE_SIGN_IDENTITY=",
-      "SYMROOT=build", "OBJROOT=build"
-      bin.install "build/Release/localizationCommand"
+    system "unset CC; swift build -c release"
+    bin.install ".build/release/localizationCommand"
   end
 
 end
