@@ -6,7 +6,7 @@ class Localizationcommand < Formula
   desc "Command Line for iOS app of localization(support '*.m','*.swift')"
   homepage "https://github.com/BackNotGod/localizationCommand"
   url "https://github.com/BackNotGod/localizationCommand/archive/1.0.3.tar.gz"
-  sha256 "de6b3520f4c819d44cb741aaf3d0e291e8cdbe9c06652aff8d5c21d31d5a1b60"
+  sha256 "68e7c9f1344b280d5c6ce27280a2aa2906e201d40f588508eb848aee45a587fb"
 
 
   def install
