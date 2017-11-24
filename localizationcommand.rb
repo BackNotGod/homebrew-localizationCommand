@@ -10,7 +10,7 @@ class Localizationcommand < Formula
 
 
   def install
-    system "unset CC; swift build -c release"
+    system "unset CC; swift build --disable-sandbox -c release -Xswiftc -static-stdlib"
     bin.install ".build/release/localizationCommand"
   end
 
